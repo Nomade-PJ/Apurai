@@ -71,3 +71,13 @@ export function electionPhase(c: ElectionConfig, now: Date = new Date()): Electi
   if (today === c.votingDate) return "dia";
   return "encerrado";
 }
+
+/**
+ * URL da foto oficial do candidato, no mesmo padrão usado pelo portal de resultados do TSE:
+ * `<base>/oficial/<ciclo>/<eleição>/fotos/br/<sqcand>.jpeg`. Devolve null se o sqcand não for numérico.
+ * Se a foto não existir ou falhar ao carregar, a interface mostra as iniciais do candidato.
+ */
+export function candidatePhotoUrl(photoId: string | null | undefined, c: ElectionConfig = ELECTION, base: string = TSE_RESULTS_BASE): string | null {
+  if (!photoId || !/^\d{1,20}$/.test(photoId)) return null;
+  return `${base}/oficial/${c.cycle}/${c.electionCode}/fotos/br/${photoId}.jpeg`;
+}

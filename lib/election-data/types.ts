@@ -6,6 +6,8 @@ export interface OfficialCandidate {
   party: string | null;
   number: string | null;
   sequence: number | null;
+  /** sqcand: sequencial do candidato no TSE; é a chave do arquivo de foto oficial. Ausente em snapshots antigos salvos. */
+  photoId?: string | null;
   /** vap: votos computados para o candidato. */
   votes: number;
   /** pvap: percentual de votos computados do candidato em relação aos votos votáveis concorrentes (2 casas). */

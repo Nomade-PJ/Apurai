@@ -59,6 +59,12 @@ const isRecord = (v: unknown): v is Rec => typeof v === "object" && v !== null &
 const str = (v: unknown): string => (typeof v === "string" ? v.trim() : typeof v === "number" ? String(v) : "");
 const nonEmpty = (v: unknown): string | null => str(v) || null;
 
+/** sqcand só é aceito se for numérico (vai para a URL da foto); qualquer outra coisa vira null. */
+function photoIdOf(v: unknown): string | null {
+  const s = str(v);
+  return /^\d{1,20}$/.test(s) ? s : null;
+}
+
 function nonNegInt(v: unknown, label: string): number {
   const n = parseBrNumber(v);
   if (n === null || n < 0 || !Number.isInteger(n)) throw new NormalizationError(`Valor inválido em ${label}.`);
@@ -138,6 +144,7 @@ export function normalizeOfficialData(raw: unknown, opts: NormalizeOptions = {})
           party: nonEmpty(par.sg),
           number: nonEmpty(c.n),
           sequence: seq !== null && Number.isInteger(seq) ? seq : null,
+          photoId: photoIdOf(c.sqcand),
           votes,
           percent,
           status: nonEmpty(c.st),
