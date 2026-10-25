@@ -1,8 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { siteUrl } from "@/lib/env";
+
+// Inter hospedada pelo próprio site: o Next baixa a fonte no build e a serve de /_next/static (sem pedir nada ao Google
+// no navegador do visitante), então a CSP (style-src/font-src 'self') e a política de privacidade continuam válidas.
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
 
 const base = siteUrl();
 
@@ -26,7 +31,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={inter.variable}>
       <body className="font-sans">
         <a href="#conteudo" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:text-navy-950">
           Pular para o conteúdo

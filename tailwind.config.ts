@@ -8,7 +8,7 @@ const config: Config = {
         navy: { 950: "#060d1f", 900: "#0a1530", 800: "#0f1f44", 700: "#18305f", 600: "#24427f" },
         signal: { DEFAULT: "#2ee59d", dim: "#1aa874" },
       },
-      fontFamily: { sans: ["system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"] },
+      fontFamily: { sans: ["var(--font-inter)", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"] },
     },
   },
   plugins: [],
