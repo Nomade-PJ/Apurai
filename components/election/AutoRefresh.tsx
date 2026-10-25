@@ -44,6 +44,6 @@ export function AutoRefresh({ enabled }: { enabled: boolean }) {
     };
   }, [enabled, router]);
 
-  if (!enabled) return null;
-  return <p className="text-xs text-slate-400">Esta página se atualiza sozinha a cada cerca de 30 segundos enquanto a apuração está em andamento.</p>;
+  // Sem texto na tela: a atualização é silenciosa.
+  return null;
 }
