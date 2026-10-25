@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { @apply bg-navy-950 text-slate-100 antialiased; }
+:focus-visible { outline: 3px solid #2ee59d; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+
+/* Quadro dos espaços publicitários: proporção por espaço (variáveis definidas em AdFrame). */
+.ad-frame { position: relative; width: 100%; margin-inline: auto; overflow: hidden; aspect-ratio: var(--ad-ar-m); }
+@media (min-width: 768px) { .ad-frame { aspect-ratio: var(--ad-ar-d); } }
+
+/* Componentes padronizados (botões, campos, avisos), usados no site público e no painel. */
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md border border-navy-600 bg-navy-800 px-3.5 py-2 text-sm font-medium text-slate-100 transition-colors hover:bg-navy-700 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply border-transparent bg-signal text-navy-950 hover:bg-signal-dim; }
+  .btn-danger { @apply border-red-400/60 text-red-200 hover:bg-red-950/60; }
+  .field { @apply mt-1 block w-full rounded-md border border-navy-600 bg-navy-900 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 disabled:opacity-60; }
+  .field[aria-invalid="true"] { @apply border-red-400; }
+  .card { @apply rounded-lg border border-navy-700 bg-navy-800 p-4; }
+  .alert { @apply rounded-md border p-3 text-sm; }
+  .alert-error { @apply border-red-400/60 bg-red-950/40 text-red-200; }
+  .alert-ok { @apply border-signal/60 bg-navy-900 text-signal; }
+  .alert-warn { @apply border-amber-400/60 bg-amber-950/40 text-amber-200; }
+}
+
+/* ---------- Componentes padronizados (botões, campos, cartões, alertas) ---------- */
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md border border-navy-600 bg-navy-800 px-3.5 py-2 text-sm font-medium text-slate-100 transition-colors hover:bg-navy-700 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply border-transparent bg-signal text-navy-950 hover:bg-signal-dim; }
+  .btn-danger { @apply border-red-500/60 bg-transparent text-red-200 hover:bg-red-950/50; }
+  .field { @apply mt-1 block w-full rounded-md border border-navy-600 bg-navy-900 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 disabled:opacity-60; }
+  .field[aria-invalid="true"] { @apply border-red-400; }
+  .card { @apply rounded-lg border border-navy-700 bg-navy-800 p-4; }
+  .alert { @apply rounded-md border p-3 text-sm; }
+  .alert-error { @apply border-red-400/70 bg-red-950/40 text-red-200; }
+  .alert-ok { @apply border-signal/60 bg-navy-900 text-signal; }
+  .alert-warn { @apply border-amber-400/70 bg-amber-950/40 text-amber-200; }
+}
+
+/* ---------- Quadro de anúncio: proporção do espaço reservada em CSS (sem deslocamento de layout) ---------- */
+.ad-frame { position: relative; width: 100%; margin-inline: auto; overflow: hidden; aspect-ratio: var(--ad-ar-m); }
+@media (min-width: 768px) { .ad-frame { aspect-ratio: var(--ad-ar-d); } }

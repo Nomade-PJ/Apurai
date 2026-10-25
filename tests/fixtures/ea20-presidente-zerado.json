@@ -1,0 +1,126 @@
+{
+  "ele": "6258",
+  "t": "2",
+  "f": "o",
+  "sup": "n",
+  "tpabr": "br",
+  "cdabr": "br",
+  "dg": "25/10/2026",
+  "hg": "19:12:40",
+  "idg": "1",
+  "dt": "",
+  "ht": "",
+  "tf": "n",
+  "and": "n",
+  "md": "n",
+  "dv": "s",
+  "esae": "n",
+  "carg": [
+    {
+      "cd": "0001",
+      "nmn": "Presidente",
+      "nmm": "Presidente",
+      "nmf": "Presidente",
+      "nv": "1",
+      "agr": [
+        {
+          "n": "13",
+          "nm": "CANDIDATO ALFA",
+          "tp": "i",
+          "com": "",
+          "vag": "1",
+          "tvan": "0",
+          "tvtn": "0",
+          "tval": "0",
+          "tvtl": "0",
+          "par": [
+            {
+              "n": "13",
+              "sg": "PAA",
+              "nm": "PARTIDO ALFA",
+              "nfed": "",
+              "dvt": "Válido",
+              "tvan": "0",
+              "tvtn": "0",
+              "tval": "0",
+              "tvtl": "0",
+              "cand": [
+                {
+                  "n": "13",
+                  "sqcand": "90001",
+                  "nm": "ALFA TESTE DA SILVA",
+                  "nmu": "ALFA TESTE",
+                  "dt": "",
+                  "dvt": "Válido",
+                  "seq": "1",
+                  "e": "n",
+                  "st": "",
+                  "vap": "0",
+                  "pvap": "0,00",
+                  "pvapn": "50.890000000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "n": "22",
+          "nm": "CANDIDATO BETA",
+          "tp": "i",
+          "com": "",
+          "vag": "1",
+          "tvan": "0",
+          "tvtn": "0",
+          "tval": "0",
+          "tvtl": "0",
+          "par": [
+            {
+              "n": "22",
+              "sg": "PBB",
+              "nm": "PARTIDO BETA",
+              "nfed": "",
+              "dvt": "Válido",
+              "tvan": "0",
+              "tvtn": "0",
+              "tval": "0",
+              "tvtl": "0",
+              "cand": [
+                {
+                  "n": "22",
+                  "sqcand": "90002",
+                  "nm": "BETA TESTE SOUZA",
+                  "nmu": "BETA TESTE",
+                  "dt": "",
+                  "dvt": "Válido",
+                  "seq": "2",
+                  "e": "n",
+                  "st": "",
+                  "vap": "0",
+                  "pvap": "0,00",
+                  "pvapn": "49.110000000"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "s": {
+    "ts": "472000",
+    "st": "0",
+    "pst": "0,00"
+  },
+  "v": {
+    "tv": "0",
+    "vv": "0",
+    "pvv": "0,00"
+  },
+  "e": {
+    "te": "5000000",
+    "c": "2500000",
+    "pc": "50,00",
+    "a": "2500000",
+    "pa": "50,00"
+  }
+}
