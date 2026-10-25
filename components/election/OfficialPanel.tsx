@@ -182,6 +182,8 @@ function Totals({ snap }: { snap: OfficialSnapshot }) {
 export function OfficialPanel({ state: st }: { state: OfficialState }) {
   const snap = st.snapshot;
   const host = st.sourceUrl ? new URL(st.sourceUrl).hostname : null;
+  // O link leva ao portal público do TSE (página inicial do mesmo site), nunca ao arquivo JSON de dados.
+  const portalUrl = st.sourceUrl ? new URL(st.sourceUrl).origin : null;
 
   return (
     <section id="apuracao" aria-labelledby="apuracao-titulo" className="rounded-xl border border-navy-600 bg-navy-800 p-4 sm:p-6">
@@ -241,7 +243,7 @@ export function OfficialPanel({ state: st }: { state: OfficialState }) {
       )}
 
       <dl className="mt-4 grid gap-1 border-t border-navy-700 pt-3 text-xs text-slate-400 sm:grid-cols-2">
-        <div><dt className="inline">Fonte: </dt><dd className="inline">{st.sourceUrl && host ? <a className="underline" href={st.sourceUrl} rel="noopener noreferrer">{host}</a> : "não configurada"}</dd></div>
+        <div><dt className="inline">Fonte: </dt><dd className="inline">{portalUrl && host ? <a className="underline" href={portalUrl} target="_blank" rel="noopener noreferrer">{host}</a> : "não configurada"}</dd></div>
         {snap && (st.status === "ok" || st.status === "stale") && (
           <>
             <div><dt className="inline">Gerado pelo TSE em: </dt><dd className="inline">{snap.generatedAt ? fmtWhen(snap.generatedAt) : "não informado"}</dd></div>
