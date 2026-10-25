@@ -1,4 +1,5 @@
 import { AdSlot } from "@/components/advertising/AdSlot";
+import { AutoRefresh } from "@/components/election/AutoRefresh";
 import { ContextNotice } from "@/components/election/ContextNotice";
 import { OfficialPanel } from "@/components/election/OfficialPanel";
 import { ShareButton } from "@/components/ui/ShareButton";
@@ -25,6 +26,7 @@ export default async function Home() {
       <div className={lateral.length ? "grid gap-5 lg:grid-cols-[1fr_300px]" : undefined}>
         <div className="min-w-0 space-y-5">
           <OfficialPanel state={official} />
+          <AutoRefresh enabled={!(official.status === "ok" && official.snapshot?.final)} />
           <AdSlot position="patrocinador" ads={patrocinador} intervalSeconds={slots.patrocinador.rotationSeconds} />
           <ShareButton path="/" title="Apuraí — apuração oficial" text="Acompanhe a apuração oficial no Apuraí" configuredBase={siteUrl()} preferConfigured={isProd()} />
         </div>
